@@ -1,5 +1,5 @@
-# whizbang
-# Sandbox repository to learn git
+ whizbang
+## Sandbox repository to learn git
 
 # This is a place where I will learn git.
 
