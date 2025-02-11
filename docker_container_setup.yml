@@ -1,0 +1,91 @@
+---
+- name: Create a Docker container with Ubuntu, Python 3.12, Apache, and SQLite3
+  hosts: localhost
+  become: true
+  vars:
+    container_name: my_container
+    image_name: ubuntu:latest
+    python_version: "3.12"
+    apache_package: apache2
+    sqlite_package: sqlite3
+
+  tasks:
+    # Step 1: Install Docker and dependencies
+    - name: Install required system packages for Docker
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: latest
+        update_cache: true
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Install Docker CE
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+    - name: Install Python Docker SDK for Ansible to manage Docker
+      pip:
+        name: docker
+
+    # Step 2: Pull the base Ubuntu image for the container
+    - name: Pull Ubuntu image from Docker Hub
+      community.docker.docker_image:
+        name: "{{ image_name }}"
+        source: pull
+
+    # Step 3: Create and configure the Docker container
+    - name: Create a Docker container with Ubuntu base image
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ image_name }}"
+        state: started
+
+    # Step 4: Install Python 3.12 inside the container
+    - name: Install Python 3.12 in the container
+      community.docker.docker_container_exec:
+        container: "{{ container_name }}"
+        command:
+          - bash
+          - -c
+          - |
+            apt update &&
+            apt install -y software-properties-common &&
+            add-apt-repository ppa:deadsnakes/ppa &&
+            apt install -y python{{ python_version }}
+
+    # Step 5: Install Apache web server inside the container
+    - name: Install Apache web server in the container
+      community.docker.docker_container_exec:
+        container: "{{ container_name }}"
+        command:
+          - bash
+          - -c
+          - |
+            apt update &&
+            apt install -y "{{ apache_package }}"
+
+    # Step 6: Install SQLite3 inside the container
+    - name: Install SQLite3 in the container
+      community.docker.docker_container_exec:
+        container: "{{ container_name }}"
+        command:
+          - bash
+          - -c
+          - |
+            apt update &&
+            apt install -y "{{ sqlite_package }}"
+
