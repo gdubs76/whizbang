@@ -45,4 +45,4 @@ Let’s create a bucket named my-app-data-bucket in us-west-2 (Oregon):
 
 ## Notes
 _You cannot change a bucket's name or region after creation._
-_If using AWS CLI or SDKs (e.g., Python's Boto3), commands/scripts can automate this process3610._
+_If using AWS CLI or SDKs (e.g., Python's Boto3), commands/scripts can automate this process._
