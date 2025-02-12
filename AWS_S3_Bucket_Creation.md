@@ -1,8 +1,8 @@
-# To create an Amazon S3 bucket using the AWS Management Console, follow these detailed steps:
+# To create an Amazon S3 bucket using the [AWS Management Console](https://aws.amazon.com/s3/), follow these detailed steps:
 
 ## Step-by-Step Instructions
 
-1. Sign in to the AWS Management Console
+1. Sign in to the [AWS Management Console](https://aws.amazon.com/s3/)
 	*Go to the AWS Management Console and log in with your credentials.
 2. Navigate to the S3 Service
 	* In the AWS Management Console, click on Services in the top-left corner.
@@ -34,14 +34,14 @@ To upload files:
 	
 ## Example
 Let’s create a bucket named my-app-data-bucket in us-west-2 (Oregon):
-1. Sign in to AWS Management Console.
+1. Sign in to [AWS Management Console](https://aws.amazon.com/s3/).
 2. Navigate to S3 and click "Create bucket."
 3. Enter:
-	* Bucket Name: my-app-data-bucket
+	* Bucket Name: _my-app-data-bucket_
 	* Region: US West (Oregon)
 4. Leave default settings for public access blocking and encryption.
 5. Click "Create bucket."
-6. The bucket my-app-data-bucket will now appear in your list of buckets.
+6. The bucket _my-app-data-bucket_ will now appear in your list of buckets.
 
 ## Notes
 _You cannot change a bucket's name or region after creation._
