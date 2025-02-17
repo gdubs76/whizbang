@@ -33,7 +33,7 @@ To upload files:
 	* Click Upload to store the files in your S3 bucket.
 	
 ## Example
-Let’s create a bucket named my-app-data-bucket in us-west-2 (Oregon):
+Let’s create a bucket named _my-app-data-bucket_ in us-west-2 (Oregon):
 1. Sign in to [AWS Management Console](https://aws.amazon.com/s3/).
 2. Navigate to S3 and click "Create bucket."
 3. Enter:
