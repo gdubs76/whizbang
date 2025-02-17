@@ -3,7 +3,7 @@
 ## Step-by-Step Instructions
 
 1. Sign in to the [AWS Management Console](https://aws.amazon.com/s3/)
-	*Go to the AWS Management Console and log in with your credentials.
+	* Go to the AWS Management Console and log in with your credentials.
 2. Navigate to the S3 Service
 	* In the AWS Management Console, click on Services in the top-left corner.
 	* Under the Storage category, select S3 to open the Amazon S3 console.
