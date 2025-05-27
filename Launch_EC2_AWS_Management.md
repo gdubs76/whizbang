@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
 # How do I spin up an EC2 instance in AWS Management Console
 
 To spin up (launch) an EC2 instance using the AWS Management Console, follow these steps:
