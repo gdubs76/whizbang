@@ -1,4 +1,4 @@
-# How do I spin up an EC2 instance in AWS Management Console
+# How to spin up an EC2 instance with AWS Management Console
 
 To spin up (launch) an EC2 instance using the AWS Management Console, follow these steps:
 
